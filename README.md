@@ -1,19 +1,26 @@
-# New Encryption System
+#include <iostream>
+using namespace std;
+int main(){
 
-A C++ program that converts English text messages into base-10 numeric codes and vice versa.
-
-## 🔹 Features
-- Converts alphabetic characters to numeric representation
-- Supports reverse conversion (numbers back to text)
-- Interactive user input
-- Uses loops and conditional statements
-
-## 🔹 Technologies Used
-- C++
-- Standard Input/Output
-- Basic string handling
-
-## 🔹 How to Run
-1. Compile using a C++ compiler (e.g., g++)
-2. Run the executable file
-3. Follow on-screen instructions
+    char text[100];
+    cout << "Enter your sentence:";
+    cin.getline(text,100);
+    for(int i=0; text[i]!='\0';i++){
+    char ch = text[i];
+        if(ch >= 'A'&& ch<='Z')
+            cout<<(ch-'A'+1)<<"";
+        else if(ch >='a'&& ch<= 'z')
+            cout<<(ch-'a'+1)<<"";
+        else if(ch==' ')
+            cout<<"27";
+        else if(ch==',')
+            cout<<"28";
+        else if(ch=='.')
+            cout<<"29";
+        else if(ch=='?')
+            cout<<"30";
+        else
+            cout<<"unknown input";
+    }
+    return 0;
+}
